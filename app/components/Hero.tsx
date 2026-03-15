@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Hero() {
     return (
@@ -64,9 +65,12 @@ export default function Hero() {
                 // animate={{ opacity: 1, scale: 1 }}
                 // transition={{ duration: 0.6, delay: 0.8 }}
                 >
-                    <button className="bg-yellow-400 px-8 py-3 font-semibold text-blue-900 transition-all hover:bg-yellow-300 hover:scale-105">
+                    <Link 
+                        href="/soluciones"
+                        className="inline-block bg-yellow-400 px-8 py-3 font-semibold text-blue-900 transition-all hover:bg-yellow-300 hover:scale-105 cursor-pointer"
+                    >
                         SABER MÁS
-                    </button>
+                    </Link>
                 </motion.div>
             </div>
 

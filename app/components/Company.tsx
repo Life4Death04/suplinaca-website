@@ -61,7 +61,7 @@ export default function Company() {
                             // transition={{ duration: 0.8, delay: 0.5 }}
                         >
                             <Link 
-                                href="/contacto"
+                                href="/soluciones"
                                 className="inline-block bg-blue-600 hover:bg-blue-700 px-8 py-4 font-bold uppercase tracking-wide text-white transition-all hover:shadow-lg"
                             >
                                 SABER MÁS
