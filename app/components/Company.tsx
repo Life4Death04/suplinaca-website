@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Company() {
     return (
@@ -78,18 +79,15 @@ export default function Company() {
                     >
                         {/* Image Container with diagonal orange overlay */}
                         <div className="relative overflow-hidden rounded-lg w-full">
-                            {/* Industrial machinery image placeholder */}
-                            <div className="relative h-[400px] bg-gradient-to-br from-gray-800 to-gray-600 lg:h-[550px]">
-                                {/* Placeholder for actual image - you can replace this with a real image */}
-                                <div className="flex h-full items-center justify-center text-white/50 h-full">
-                                    <p className="text-center text-sm">
-                                        [COLOCAR IMAGEN]
-                                        <br />
-                                        <span className="text-xs">
-                                            (RECORDAR ALT TEXT DESCRIPTIVO PARA ACCESIBILIDAD)
-                                        </span>
-                                    </p>
-                                </div>
+                            {/* Industrial machinery image */}
+                            <div className="relative h-[400px] lg:h-[550px]">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070"
+                                    alt="Industrial warehouse with organized inventory and equipment"
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                />
                             </div>
 
                             {/* Diagonal Orange Overlay at bottom */}
