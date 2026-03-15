@@ -1,8 +1,8 @@
 'use server';
 
-import { Resend } from 'resend';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Resend functionality temporarily disabled for deployment
+// import { Resend } from 'resend';
+// const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function sendContactEmail(formData: FormData) {
   try {
@@ -29,41 +29,33 @@ export async function sendContactEmail(formData: FormData) {
       };
     }
 
-    // Send email using Resend
-    await resend.emails.send({
-      from: 'Suplinaca Website <onboarding@resend.dev>', // This is Resend's test email
-      to: 'santiagodrm@gmail.com',
-      subject: `Nuevo contacto: ${asunto}`,
-      replyTo: email,
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #2563eb;">Nuevo mensaje de contacto</h2>
-          <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <p><strong>Nombre:</strong> ${nombre}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Empresa:</strong> ${empresa}</p>
-            <p><strong>Asunto:</strong> ${asunto}</p>
-          </div>
-          <div style="background-color: #ffffff; padding: 20px; border-left: 4px solid #2563eb; margin: 20px 0;">
-            <h3 style="margin-top: 0;">Mensaje:</h3>
-            <p style="white-space: pre-wrap;">${mensaje}</p>
-          </div>
-          <p style="color: #6b7280; font-size: 12px; margin-top: 30px;">
-            Este mensaje fue enviado desde el formulario de contacto de Suplinaca.
-          </p>
-        </div>
-      `,
+    // Log the form data for debugging (instead of sending email)
+    console.log('Contact form submission:', {
+      nombre,
+      email,
+      empresa,
+      asunto,
+      mensaje: mensaje.substring(0, 50) + '...'
     });
+
+    // Email sending temporarily disabled
+    // await resend.emails.send({
+    //   from: 'Suplinaca Website <onboarding@resend.dev>',
+    //   to: 'santiagodrm@gmail.com',
+    //   subject: `Nuevo contacto: ${asunto}`,
+    //   replyTo: email,
+    //   html: `...`
+    // });
 
     return { 
       success: true, 
-      message: '¡Mensaje enviado exitosamente! Te contactaremos pronto.' 
+      message: '¡Mensaje recibido! Te contactaremos pronto.' 
     };
   } catch (error) {
-    console.error('Error sending email:', error);
+    console.error('Error processing form:', error);
     return { 
       success: false, 
-      error: 'Hubo un error al enviar el mensaje. Por favor intenta nuevamente.' 
+      error: 'Hubo un error al procesar el mensaje. Por favor intenta nuevamente.' 
     };
   }
 }
