@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function QualityBanner() {
     return (
@@ -38,9 +39,12 @@ export default function QualityBanner() {
                 // viewport={{ once: true }}
                 // transition={{ duration: 0.6, delay: 0.3 }}
                 >
-                    <button className="bg-blue-600 px-10 py-4 text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-blue-700 hover:shadow-xl">
+                    <Link 
+                        href="/contacto"
+                        className="inline-block bg-blue-600 px-10 py-4 text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-blue-700 hover:shadow-xl cursor-pointer"
+                    >
                         Contacto
-                    </button>
+                    </Link>
                 </motion.div>
             </div>
         </section>

@@ -1,11 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Hero() {
     return (
-        <section className="relative flex min-h-[70vh] items-center justify-center lg:justify-left overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 pt-24">
-            {/* Background animated overlay */}
+        <section 
+            className="relative flex min-h-[70vh] items-center justify-center lg:justify-left overflow-hidden pt-24"
+            style={{
+                backgroundImage: 'url(https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+            }}
+        >
+            {/* Background overlay for better text readability */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/55 to-blue-950/90" />
+            
+            {/* Additional animated overlay */}
             <motion.div
                 className="absolute inset-0 bg-black/20"
             // initial={{ opacity: 0 }}
@@ -54,9 +65,12 @@ export default function Hero() {
                 // animate={{ opacity: 1, scale: 1 }}
                 // transition={{ duration: 0.6, delay: 0.8 }}
                 >
-                    <button className="bg-yellow-400 px-8 py-3 font-semibold text-blue-900 transition-all hover:bg-yellow-300 hover:scale-105">
+                    <Link 
+                        href="/soluciones"
+                        className="inline-block bg-yellow-400 px-8 py-3 font-semibold text-blue-900 transition-all hover:bg-yellow-300 hover:scale-105 cursor-pointer"
+                    >
                         SABER MÁS
-                    </button>
+                    </Link>
                 </motion.div>
             </div>
 

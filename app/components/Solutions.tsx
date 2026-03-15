@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 // Service card component
 interface ServiceCardProps {
@@ -10,6 +11,7 @@ interface ServiceCardProps {
     subtitle: string;
     description: string;
     imagePlaceholder?: string;
+    imageUrl?: string;
     delay?: number;
     link?: string;
 }
@@ -19,6 +21,7 @@ function ServiceCard({
     title,
     subtitle,
     description,
+    imageUrl,
     imagePlaceholder,
     delay = 0,
     link = "#",
@@ -44,16 +47,16 @@ function ServiceCard({
                     </div>
                 </div>
 
-                {/* Image placeholder */}
+                {/* Image */}
                 <div className="mb-4 overflow-hidden rounded-lg">
-                    <div className="relative h-64 w-full bg-gradient-to-br from-gray-200 to-gray-300">
-                        {/* Placeholder - replace with actual images */}
-                        <div className="flex h-full items-center justify-center text-gray-500">
-                            <div className="text-center text-sm">
-                                <p>[{imagePlaceholder || "Service Image"}]</p>
-                                <p className="mt-1 text-xs">Add image to public/ folder</p>
-                            </div>
-                        </div>
+                    <div className="relative h-64 w-full">
+                        <Image
+                            src={imageUrl || "https://images.unsplash.com/photo-1581092918484-8623f0d0e55e?q=80&w=2070"}
+                            alt={`${title} - ${subtitle}`}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        />
                     </div>
                 </div>
 
@@ -104,6 +107,7 @@ export default function Solutions() {
             description:
                 "Nos especializamos en el suministro de componentes y fabricación de meter run, múltiples de producción, casing & tubing, sucker rod, válvulas, bridas, fittings, butt weld fittings, entre otros.",
             imagePlaceholder: "Mechanical Equipment",
+            imageUrl: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070",
             link: "/soluciones/mecanica",
         },
         {
@@ -127,6 +131,7 @@ export default function Solutions() {
             description:
                 "Suministro de equipos eléctricos industriales, tableros de control, transformadores, motores y sistemas de automatización para optimizar sus procesos productivos.",
             imagePlaceholder: "Electrical Equipment",
+            imageUrl: "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?q=80&w=2070",
             link: "/soluciones/electrica",
         },
         {
@@ -150,6 +155,7 @@ export default function Solutions() {
             description:
                 "Instrumentos de medición, válvulas de control, transmisores, sensores y sistemas de automatización para mantener el control total de sus procesos industriales.",
             imagePlaceholder: "Instrumentation",
+            imageUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070",
             link: "/soluciones/instrumentacion",
         },
         {
@@ -173,6 +179,7 @@ export default function Solutions() {
             description:
                 "Materiales de construcción, estructuras metálicas, sistemas de tuberías y equipos especializados para proyectos de infraestructura de gran envergadura.",
             imagePlaceholder: "Civil Construction",
+            imageUrl: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070",
             link: "/soluciones/civil",
         },
     ];
@@ -206,6 +213,7 @@ export default function Solutions() {
                         <ServiceCard
                             key={service.title}
                             icon={service.icon}
+                            imageUrl={service.imageUrl}
                             title={service.title}
                             subtitle={service.subtitle}
                             description={service.description}

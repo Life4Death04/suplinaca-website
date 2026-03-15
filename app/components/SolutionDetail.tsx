@@ -83,6 +83,7 @@ export default function SolutionDetail({ title, solutions }: SolutionDetailProps
                             <div className="md:w-1/3 flex-shrink-0">
                               <div className="relative h-48 md:h-full rounded-md overflow-hidden">
                                 <Image
+                                  preload
                                   src={solution.image}
                                   alt={solution.name}
                                   fill
