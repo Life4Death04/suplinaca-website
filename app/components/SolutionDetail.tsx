@@ -25,6 +25,21 @@ export default function SolutionDetail({ title, solutions }: SolutionDetailProps
   };
   return (
     <section className="py-16 px-4 bg-white">
+      {/* Hidden image preloader */}
+      <div className="hidden">
+        {solutions.map((solution, index) => 
+          solution.image ? (
+            <Image
+              key={`preload-${index}`}
+              src={solution.image}
+              alt=""
+              width={400}
+              height={300}
+              priority
+            />
+          ) : null
+        )}
+      </div>
       <div className="max-w-7xl mx-auto">
         <motion.h2 
           className="text-3xl md:text-4xl font-bold mb-8 text-gray-900"
@@ -101,7 +116,6 @@ export default function SolutionDetail({ title, solutions }: SolutionDetailProps
                             <div className="md:w-1/3 flex-shrink-0">
                               <div className="relative h-48 md:h-full rounded-md overflow-hidden">
                                 <Image
-                                  preload
                                   src={solution.image}
                                   alt={solution.name}
                                   fill
