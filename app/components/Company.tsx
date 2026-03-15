@@ -5,13 +5,13 @@ import Image from "next/image";
 
 export default function Company() {
     return (
-        <section className="bg-white px-4 py-5 lg:pb-12">
+        <section className="bg-white px-4 py-16 lg:py-20">
             <div className="mx-auto max-w-7xl">
                 {/* Two-column grid layout - stacks on mobile, side-by-side on desktop */}
-                <div className="relative flex flex-col md:flex-row gap-8">
+                <div className="relative flex flex-col md:flex-row gap-12">
                     {/* Left Column - Text Content */}
                     <motion.div
-                        className="flex flex-col justify-center gap-6 md:gap-2 md:w-1/2"
+                        className="flex flex-col justify-center gap-4 md:w-1/2"
                         // initial={{ opacity: 0, x: -50 }}
                         // whileInView={{ opacity: 1, x: 0 }}
                         // viewport={{ once: true }}
@@ -19,50 +19,51 @@ export default function Company() {
                     >
                         {/* Section Label */}
                         <motion.p
-                            className="mb-4 md:mb-0 text-sm font-bold uppercase tracking-wide text-blue-600"
+                            className="text-sm font-bold uppercase tracking-wide text-orange-500"
                             // initial={{ opacity: 0 }}
                             // whileInView={{ opacity: 1 }}
                             // viewport={{ once: true }}
                             // transition={{ duration: 0.6, delay: 0.2 }}
                         >
-                            La Empresa
+                            SUPLIDORA NACIONAL DE VENEZUELA C.A.
                         </motion.p>
 
                         {/* Main Heading */}
                         <motion.h2
-                            className="mb-6 md:mb-0 text-3xl font-bold leading-tight text-gray-900 md:text-4xl lg:text-5xl"
+                            className="text-4xl font-bold leading-tight text-gray-900 md:text-5xl"
                             // initial={{ opacity: 0, y: 20 }}
                             // whileInView={{ opacity: 1, y: 0 }}
                             // viewport={{ once: true }}
                             // transition={{ duration: 0.8, delay: 0.3 }}
                         >
-                            Eficacia en todos los procesos del Sistema Integrado de Gestión
+                            Sobre Nosotros
                         </motion.h2>
 
-                        {/* Description */}
+                        {/* Description Paragraph 1 */}
                         <motion.p
-                            className="mb-8 md:mb-0 text-base leading-relaxed text-gray-600 md:text-lg"
+                            className="text-base leading-relaxed text-gray-600"
                             // initial={{ opacity: 0, y: 20 }}
                             // whileInView={{ opacity: 1, y: 0 }}
                             // viewport={{ once: true }}
                             // transition={{ duration: 0.8, delay: 0.4 }}
                         >
-                            Ofrecemos eficacia en todos los procesos que conforman el Sistema
-                            Integrado de Gestión, fabricación y comercialización de nuestros
-                            productos, garantizando así, la satisfacción de nuestros clientes.
+                            Es una compañía de comercialización de tuberías, válvulas, bridas y accesorios, 
+                            además fabricante de piezas especiales para el sector Petrolero, Hidrológico, 
+                            Industrial, Gasífero, Construcción y Servicios.
                         </motion.p>
 
-                        {/* Call to Action Button */}
-                        <motion.div
+                        {/* Description Paragraph 2 */}
+                        <motion.p
+                            className="text-base leading-relaxed text-gray-600"
                             // initial={{ opacity: 0, y: 20 }}
                             // whileInView={{ opacity: 1, y: 0 }}
                             // viewport={{ once: true }}
                             // transition={{ duration: 0.8, delay: 0.5 }}
                         >
-                            <button className="bg-blue-600 px-8 py-4 font-bold uppercase tracking-wide text-white transition-all hover:bg-blue-700 hover:shadow-lg">
-                                Saber Más
-                            </button>
-                        </motion.div>
+                            Ofrece eficacia en todos los procesos que conforman el Sistema Integrado de Gestión, 
+                            fabricación y comercialización de nuestros productos, garantizando así, la satisfacción 
+                            de nuestros clientes.
+                        </motion.p>
                     </motion.div>
 
                     {/* Right Column - Image with Badge */}
@@ -98,12 +99,12 @@ export default function Company() {
                                 >
                                     <polygon
                                         points="0,50 0,100 400,100 400,0"
-                                        fill="#2268ff"
+                                        fill="#ea580c"
                                         opacity="0.9"
                                     />
                                     <polygon
                                         points="0,30 0,100 350,100"
-                                        fill="#0b2adb"
+                                        fill="#dc2626"
                                         opacity="0.7"
                                     />
                                 </svg>
@@ -125,11 +126,11 @@ export default function Company() {
                             // whileHover={{ scale: 1.05, rotate: 5 }}
                         >
                             <div className="text-center">
-                                <div className="text-5xl font-bold text-blue-600">17+</div>
+                                <div className="text-5xl font-bold text-orange-500">17+</div>
                                 <div className="text-xs font-semibold uppercase text-gray-700">
                                     Años de
                                     <br />
-                                    experiencia
+                                    Experiencia
                                 </div>
                             </div>
                         </motion.div>
