@@ -1,5 +1,8 @@
 "use client";
 
+import FormInput from './FormInput';
+import FormTextarea from './FormTextarea';
+
 export default function ContactFormSection() {
   return (
     <div className="bg-white flex flex-wrap justify-start mt-8 lg:mt-0 lg:flex-col">
@@ -11,44 +14,29 @@ export default function ContactFormSection() {
         </p>
 
         <form className="space-y-6">
-          <div>
-            <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-2">
-              Nombre
-            </label>
-            <input
-              type="text"
-              id="nombre"
-              name="nombre"
-              placeholder="Nombre"
-              className="w-full px-4 py-3 bg-gray-50 border-0 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
-            />
-          </div>
+          <FormInput
+            label="Nombre"
+            id="nombre"
+            name="nombre"
+            type="text"
+            variant="light"
+          />
 
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Email"
-              className="w-full px-4 py-3 bg-gray-50 border-0 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
-            />
-          </div>
+          <FormInput
+            label="Email"
+            id="email"
+            name="email"
+            type="email"
+            variant="light"
+          />
 
-          <div>
-            <label htmlFor="mensaje" className="block text-sm font-medium text-gray-700 mb-2">
-              Mensaje
-            </label>
-            <textarea
-              id="mensaje"
-              name="mensaje"
-              rows={4}
-              placeholder="Mensaje"
-              className="w-full px-4 py-3 bg-gray-50 border-0 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 resize-none"
-            />
-          </div>
+          <FormTextarea
+            label="Mensaje"
+            id="mensaje"
+            name="mensaje"
+            rows={4}
+            variant="light"
+          />
 
           <button
             type="submit"
