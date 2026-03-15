@@ -3,6 +3,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import ContactInfoCard from '../components/ContactInfoCard';
 import SolutionHero from '../components/SolutionHero';
+import ContactForm from '../components/ContactForm';
 
 export const metadata: Metadata = {
   title: 'Contacto - Suplimeca | Contáctanos',
@@ -90,11 +91,11 @@ export default function ContactoPage() {
       {/* Contact Form Section */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-wrap items-center gap-8">
+          <div className="flex flex-col md:flex-row md:items-stretch gap-8">
             {/* Image Side */}
-            <div className="flex-1 min-w-[300px]">
+            <div className="w-full md:flex-1">
               <div 
-                className="w-full h-[500px]"
+                className="w-full h-[300px] md:h-full rounded-lg overflow-hidden"
                 style={{
                   backgroundImage: 'url(https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070)',
                   backgroundSize: 'cover',
@@ -103,89 +104,11 @@ export default function ContactoPage() {
               />
             </div>
 
-            {/* Form Side */}
-            <div className="flex-1 min-w-[300px]">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                Envíanos un mensaje
-              </h2>
-              <p className="text-gray-600 mb-8">
-                Déjanos un mensaje y un representante te estará contactando tan pronto como pueda.
-              </p>
-
-              <form className="space-y-6">
-                <div className="flex flex-wrap gap-4">
-                  <div className="flex-1 min-w-[200px]">
-                    <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-2">
-                      Nombre
-                    </label>
-                    <input
-                      type="text"
-                      id="nombre"
-                      name="nombre"
-                      placeholder="Nombre"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 bg-gray-200 placeholder-gray-500"
-                    />
-                  </div>
-                  <div className="flex-1 min-w-[200px]">
-                    <label htmlFor="empresa" className="block text-sm font-medium text-gray-700 mb-2">
-                      Empresa
-                    </label>
-                    <input
-                      type="text"
-                      id="empresa"
-                      name="empresa"
-                      placeholder="Empresa"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 bg-gray-200 placeholder-gray-500"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 bg-gray-200 placeholder-gray-500"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="asunto" className="block text-sm font-medium text-gray-700 mb-2">
-                    Asunto
-                  </label>
-                  <input
-                    type="text"
-                    id="asunto"
-                    name="asunto"
-                    placeholder="Asunto"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 bg-gray-200 placeholder-gray-500" 
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="mensaje" className="block text-sm font-medium text-gray-700 mb-2">
-                    Mensaje
-                  </label>
-                  <textarea
-                    id="mensaje"
-                    name="mensaje"
-                    rows={5}
-                    placeholder="Mensaje"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 resize-none bg-gray-200 placeholder-gray-500"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-md transition-colors"
-                >
-                  ENVIAR
-                </button>
-              </form>
+            {/* Form Side - Centered Vertically */}
+            <div className="w-full md:flex-1 flex items-center">
+              <div className="w-full">
+                <ContactForm />
+              </div>
             </div>
           </div>
         </div>
