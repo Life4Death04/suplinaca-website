@@ -22,10 +22,10 @@ export default function QualityBanner() {
             <div className="relative z-10 text-center md:text-left md:px-75">
                 <motion.h2
                     className="mb-8 text-4xl font-light leading-tight text-white"
-                // initial={{ opacity: 0, y: 30 }}
-                // whileInView={{ opacity: 1, y: 0 }}
-                // viewport={{ once: true }}
-                // transition={{ duration: 0.8 }}
+                    initial={{ opacity: 0, y: -30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
                 >
                     Nuestro respaldo
                     <br />
@@ -34,10 +34,10 @@ export default function QualityBanner() {
                 </motion.h2>
 
                 <motion.div
-                // initial={{ opacity: 0, scale: 0.9 }}
-                // whileInView={{ opacity: 1, scale: 1 }}
-                // viewport={{ once: true }}
-                // transition={{ duration: 0.6, delay: 0.3 }}
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
                 >
                     <Link 
                         href="/contacto"

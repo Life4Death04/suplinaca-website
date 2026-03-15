@@ -59,11 +59,11 @@ function StatCard({
     return (
         <motion.div
             className="flex flex-col items-center p-4"
-        /* initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6, delay }}
-        onViewportEnter={() => setHasStarted(true)} */
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay }}
+            onViewportEnter={() => setHasStarted(true)}
         >
             <div className="mb-2 text-5xl font-bold text-blue-600 md:text-6xl">
                 {formatNumber(count)}

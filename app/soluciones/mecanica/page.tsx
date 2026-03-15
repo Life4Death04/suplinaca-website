@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
-import SolutionHero from '../../components/SolutionHero';
+import PageHero from '../../components/PageHero';
 import SolutionDetail from '../../components/SolutionDetail';
 
 export const metadata: Metadata = {
@@ -63,7 +63,7 @@ export default function MecanicaPage() {
     <main className="min-h-screen">
       <Navigation />
       
-      <SolutionHero 
+      <PageHero 
         title="Mecánica"
         subtitle="Fabricación & Suministro"
         backgroundImage="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070"

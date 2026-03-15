@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 interface PageHeroProps {
   title: string;
   subtitle: string;
@@ -22,8 +26,22 @@ export default function PageHero({
     >
       <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-950/80" />
       <div className="relative z-10 text-center px-4">
-        <h1 className="text-5xl md:text-6xl font-bold mb-4">{title}</h1>
-        <p className="text-xl md:text-2xl text-gray-200">{subtitle}</p>
+        <motion.h1 
+          className="text-5xl md:text-6xl font-bold mb-4"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          {title}
+        </motion.h1>
+        <motion.p 
+          className="text-xl md:text-2xl text-gray-200"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          {subtitle}
+        </motion.p>
       </div>
     </section>
   );
