@@ -5,7 +5,13 @@ import { motion } from "framer-motion";
 export default function InfoBoxes() {
     return (
         <section className="bg-white px-2 py-6 lg:pb-12">
-            <div className="mx-auto max-w-7xl shadow-lg">
+            <motion.div 
+                className="mx-auto max-w-7xl shadow-lg"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+            >
                 {/* Flexbox container - items arranged horizontally on desktop, vertically on mobile */}
                 <div className="flex flex-col md:flex-wrap md:flex-row gap-0 lg:flex-row">
                     {/* Experiencia Box */}
@@ -126,7 +132,7 @@ export default function InfoBoxes() {
                         </div>
                     </motion.div>
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 }

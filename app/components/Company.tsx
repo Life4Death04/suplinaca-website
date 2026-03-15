@@ -13,10 +13,10 @@ export default function Company() {
                     {/* Left Column - Text Content */}
                     <motion.div
                         className="flex flex-col justify-center gap-4 md:w-1/2"
-                        // initial={{ opacity: 0, x: -50 }}
-                        // whileInView={{ opacity: 1, x: 0 }}
-                        // viewport={{ once: true }}
-                        // transition={{ duration: 0.8 }}
+                        initial={{ opacity: 0, y: -50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
                     >
                         {/* Section Label */}
                         <motion.p
@@ -72,10 +72,10 @@ export default function Company() {
                     {/* Right Column - Image with Badge */}
                     <motion.div
                         className="w-full h-full"
-                        // initial={{ opacity: 0, x: 50 }}
-                        // whileInView={{ opacity: 1, x: 0 }}
-                        // viewport={{ once: true }}
-                        // transition={{ duration: 0.8 }}
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
                     >
                         <ImageWithBadge
                             imageUrl="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070"

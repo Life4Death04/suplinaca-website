@@ -29,11 +29,11 @@ function ServiceCard({
     return (
         <motion.div
             className="overflow-hidden rounded-lg bg-white shadow-lg"
-        // initial={{ opacity: 0, y: 50 }}
-        // whileInView={{ opacity: 1, y: 0 }}
-        // viewport={{ once: true }}
-        // transition={{ duration: 0.8, delay }}
-        // whileHover={{ y: -10, transition: { duration: 0.3 } }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay }}
+            whileHover={{ y: -10, transition: { duration: 0.3 } }}
         >
             {/* Card Header */}
             <div className="p-6">
@@ -190,10 +190,10 @@ export default function Solutions() {
                 {/* Section Header */}
                 <motion.div
                     className="mb-12 text-center"
-                // initial={{ opacity: 0, y: 30 }}
-                // whileInView={{ opacity: 1, y: 0 }}
-                // viewport={{ once: true }}
-                // transition={{ duration: 0.6 }}
+                    initial={{ opacity: 0, y: -30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
                 >
                     <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
                         Soluciones Eficientes
