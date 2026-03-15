@@ -6,12 +6,20 @@ import Link from "next/link";
 
 export default function Navigation() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isSolucionesOpen, setIsSolucionesOpen] = useState(false);
 
     const menuItems = [
         { name: "Inicio", href: "/" },
         { name: "Nosotros", href: "/nosotros" },
         { name: "Soluciones", href: "/soluciones" },
         { name: "Contacto", href: "/contacto" },
+    ];
+
+    const solucionesSubmenu = [
+        { name: "Mecánica", href: "/soluciones/mecanica" },
+        { name: "Eléctrica", href: "/soluciones/electrica" },
+        { name: "Instrumentación", href: "/soluciones/instrumentacion" },
+        { name: "Civil", href: "/soluciones/civil" },
     ];
 
     return (
@@ -33,13 +41,54 @@ export default function Navigation() {
                 {/* Desktop Menu */}
                 <div className="hidden space-x-8 md:flex">
                     {menuItems.map((item, index) => (
-                        <Link
-                            key={item.name}
-                            href={item.href}
-                            className="font-medium text-gray-700 transition-colors hover:text-blue-900"
-                        >
-                            {item.name}
-                        </Link>
+                        item.name === "Soluciones" ? (
+                            <div 
+                                key={item.name}
+                                className="relative"
+                                onMouseEnter={() => setIsSolucionesOpen(true)}
+                                onMouseLeave={() => setIsSolucionesOpen(false)}
+                            >
+                                <Link
+                                    href={item.href}
+                                    className="font-medium text-gray-700 transition-colors hover:text-blue-900 flex items-center"
+                                >
+                                    {item.name}
+                                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </Link>
+                                
+                                {/* Dropdown Menu */}
+                                {isSolucionesOpen && (
+                                    <motion.div 
+                                        className="absolute top-full left-0 mt-0 pt-2 w-48 z-50"
+                                        initial={{ opacity: 0, y: -10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.2 }}
+                                    >
+                                        <div className="bg-white shadow-lg rounded-md py-2">
+                                            {solucionesSubmenu.map((subItem) => (
+                                                <Link
+                                                    key={subItem.name}
+                                                    href={subItem.href}
+                                                    className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                                                >
+                                                    {subItem.name}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </div>
+                        ) : (
+                            <Link
+                                key={item.name}
+                                href={item.href}
+                                className="font-medium text-gray-700 transition-colors hover:text-blue-900"
+                            >
+                                {item.name}
+                            </Link>
+                        )
                     ))}
                 </div>
 
@@ -83,14 +132,38 @@ export default function Navigation() {
             >
                 <div className="space-y-4 bg-white px-4 py-6">
                     {menuItems.map((item) => (
-                        <Link
-                            key={item.name}
-                            href={item.href}
-                            className="block font-medium text-gray-700 hover:text-blue-900"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            {item.name}
-                        </Link>
+                        item.name === "Soluciones" ? (
+                            <div key={item.name}>
+                                <Link
+                                    href={item.href}
+                                    className="block font-medium text-gray-700 hover:text-blue-900"
+                                    onClick={() => setIsOpen(false)}
+                                >
+                                    {item.name}
+                                </Link>
+                                <div className="ml-4 mt-2 space-y-2">
+                                    {solucionesSubmenu.map((subItem) => (
+                                        <Link
+                                            key={subItem.name}
+                                            href={subItem.href}
+                                            className="block text-sm text-gray-600 hover:text-blue-600"
+                                            onClick={() => setIsOpen(false)}
+                                        >
+                                            • {subItem.name}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        ) : (
+                            <Link
+                                key={item.name}
+                                href={item.href}
+                                className="block font-medium text-gray-700 hover:text-blue-900"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                {item.name}
+                            </Link>
+                        )
                     ))}
                     <Link 
                         href="/contacto"
