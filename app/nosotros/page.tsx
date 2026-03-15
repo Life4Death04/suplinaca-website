@@ -148,8 +148,6 @@ export default function NosotrosPage() {
       {/* Stats Section */}
       <Stats />
 
-      
-
       {/* Brands Section */}
       <Brands />
 
