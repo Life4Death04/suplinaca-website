@@ -3,10 +3,12 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navigation() {
     const [isOpen, setIsOpen] = useState(false);
     const [isSolucionesOpen, setIsSolucionesOpen] = useState(false);
+    const pathname = usePathname();
 
     const menuItems = [
         { name: "Inicio", href: "/" },
@@ -40,8 +42,12 @@ export default function Navigation() {
 
                 {/* Desktop Menu */}
                 <div className="hidden space-x-8 md:flex">
-                    {menuItems.map((item, index) => (
-                        item.name === "Soluciones" ? (
+                    {menuItems.map((item, index) => {
+                        const isActive = item.name === "Soluciones" 
+                            ? pathname === item.href || pathname.startsWith('/soluciones/')
+                            : pathname === item.href;
+                        
+                        return item.name === "Soluciones" ? (
                             <div 
                                 key={item.name}
                                 className="relative"
@@ -50,7 +56,9 @@ export default function Navigation() {
                             >
                                 <Link
                                     href={item.href}
-                                    className="font-medium text-gray-700 transition-colors hover:text-blue-900 flex items-center"
+                                    className={`font-bold transition-colors hover:text-blue-900 flex items-center ${
+                                        isActive ? 'text-blue-600' : 'text-gray-700'
+                                    }`}
                                 >
                                     {item.name}
                                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -67,15 +75,20 @@ export default function Navigation() {
                                         transition={{ duration: 0.2 }}
                                     >
                                         <div className="bg-white shadow-lg rounded-md py-2">
-                                            {solucionesSubmenu.map((subItem) => (
-                                                <Link
-                                                    key={subItem.name}
-                                                    href={subItem.href}
-                                                    className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-                                                >
-                                                    {subItem.name}
-                                                </Link>
-                                            ))}
+                                            {solucionesSubmenu.map((subItem) => {
+                                                const isSubActive = pathname === subItem.href;
+                                                return (
+                                                    <Link
+                                                        key={subItem.name}
+                                                        href={subItem.href}
+                                                        className={`block px-4 py-2 font-bold hover:bg-blue-50 hover:text-blue-600 transition-colors ${
+                                                            isSubActive ? 'text-blue-600 bg-blue-50' : 'text-gray-700'
+                                                        }`}
+                                                    >
+                                                        {subItem.name}
+                                                    </Link>
+                                                );
+                                            })}
                                         </div>
                                     </motion.div>
                                 )}
@@ -84,12 +97,14 @@ export default function Navigation() {
                             <Link
                                 key={item.name}
                                 href={item.href}
-                                className="font-medium text-gray-700 transition-colors hover:text-blue-900"
+                                className={`font-bold transition-colors hover:text-blue-900 ${
+                                    isActive ? 'text-blue-600' : 'text-gray-700'
+                                }`}
                             >
                                 {item.name}
                             </Link>
-                        )
-                    ))}
+                        );
+                    })}
                 </div>
 
                 {/* Contact Button (Desktop) */}
@@ -131,40 +146,53 @@ export default function Navigation() {
                 transition={{ duration: 0.3 }}
             >
                 <div className="space-y-4 bg-white px-4 py-6">
-                    {menuItems.map((item) => (
-                        item.name === "Soluciones" ? (
+                    {menuItems.map((item) => {
+                        const isActive = item.name === "Soluciones" 
+                            ? pathname === item.href || pathname.startsWith('/soluciones/')
+                            : pathname === item.href;
+                        
+                        return item.name === "Soluciones" ? (
                             <div key={item.name}>
                                 <Link
                                     href={item.href}
-                                    className="block font-medium text-gray-700 hover:text-blue-900"
+                                    className={`block font-bold hover:text-blue-900 ${
+                                        isActive ? 'text-blue-600' : 'text-gray-700'
+                                    }`}
                                     onClick={() => setIsOpen(false)}
                                 >
                                     {item.name}
                                 </Link>
                                 <div className="ml-4 mt-2 space-y-2">
-                                    {solucionesSubmenu.map((subItem) => (
-                                        <Link
-                                            key={subItem.name}
-                                            href={subItem.href}
-                                            className="block text-sm text-gray-600 hover:text-blue-600"
-                                            onClick={() => setIsOpen(false)}
-                                        >
-                                            • {subItem.name}
-                                        </Link>
-                                    ))}
+                                    {solucionesSubmenu.map((subItem) => {
+                                        const isSubActive = pathname === subItem.href;
+                                        return (
+                                            <Link
+                                                key={subItem.name}
+                                                href={subItem.href}
+                                                className={`block text-sm font-bold ${
+                                                    isSubActive ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
+                                                }`}
+                                                onClick={() => setIsOpen(false)}
+                                            >
+                                                • {subItem.name}
+                                            </Link>
+                                        );
+                                    })}
                                 </div>
                             </div>
                         ) : (
                             <Link
                                 key={item.name}
                                 href={item.href}
-                                className="block font-medium text-gray-700 hover:text-blue-900"
+                                className={`block font-bold hover:text-blue-900 ${
+                                    isActive ? 'text-blue-600' : 'text-gray-700'
+                                }`}
                                 onClick={() => setIsOpen(false)}
                             >
                                 {item.name}
                             </Link>
-                        )
-                    ))}
+                        );
+                    })}
                     <Link 
                         href="/contacto"
                         className="block w-full text-center rounded-full bg-yellow-400 px-6 py-2 font-semibold text-blue-900"
