@@ -2,15 +2,16 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Navigation() {
     const [isOpen, setIsOpen] = useState(false);
 
     const menuItems = [
-        { name: "Inicio", href: "#" },
-        { name: "Nosotros", href: "#nosotros" },
-        { name: "Soluciones", href: "#soluciones" },
-        { name: "Contacto", href: "#contacto" },
+        { name: "Inicio", href: "/" },
+        { name: "Nosotros", href: "/nosotros" },
+        { name: "Soluciones", href: "/soluciones" },
+        { name: "Contacto", href: "/contacto" },
     ];
 
     return (
@@ -32,28 +33,23 @@ export default function Navigation() {
                 {/* Desktop Menu */}
                 <div className="hidden space-x-8 md:flex">
                     {menuItems.map((item, index) => (
-                        <motion.a
+                        <Link
                             key={item.name}
                             href={item.href}
                             className="font-medium text-gray-700 transition-colors hover:text-blue-900"
-                        // initial={{ opacity: 0, y: -20 }}
-                        // animate={{ opacity: 1, y: 0 }}
-                        // transition={{ duration: 0.4, delay: index * 0.1 }}
-                        // whileHover={{ scale: 1.1 }}
                         >
                             {item.name}
-                        </motion.a>
+                        </Link>
                     ))}
                 </div>
 
                 {/* Contact Button (Desktop) */}
-                <motion.button
+                <Link
+                    href="/contacto"
                     className="hidden rounded-full bg-yellow-400 px-6 py-2 font-semibold text-blue-900 transition-all hover:bg-yellow-300 md:block"
-                // whileHover={{ scale: 1.05 }}
-                // whileTap={{ scale: 0.95 }}
                 >
                     CONTACTO
-                </motion.button>
+                </Link>
 
                 {/* Mobile Menu Button */}
                 <button
@@ -87,18 +83,22 @@ export default function Navigation() {
             >
                 <div className="space-y-4 bg-white px-4 py-6">
                     {menuItems.map((item) => (
-                        <a
+                        <Link
                             key={item.name}
                             href={item.href}
                             className="block font-medium text-gray-700 hover:text-blue-900"
                             onClick={() => setIsOpen(false)}
                         >
                             {item.name}
-                        </a>
+                        </Link>
                     ))}
-                    <button className="w-full rounded-full bg-yellow-400 px-6 py-2 font-semibold text-blue-900">
+                    <Link 
+                        href="/contacto"
+                        className="block w-full text-center rounded-full bg-yellow-400 px-6 py-2 font-semibold text-blue-900"
+                        onClick={() => setIsOpen(false)}
+                    >
                         CONTACTO
-                    </button>
+                    </Link>
                 </div>
             </motion.div>
         </motion.nav>
