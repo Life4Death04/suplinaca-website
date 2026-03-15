@@ -20,7 +20,7 @@ export default function NosotrosPage() {
       />
       
       {/* Sobre Nosotros Section - 4 Box Layout */}
-      <section className="bg-white px-4 py-8">
+      <section className="bg-white px-4 py-8 overflow-hidden">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-wrap gap-8">
             {/* Box 1 - Sobre Nosotros Text (Top Left) */}
