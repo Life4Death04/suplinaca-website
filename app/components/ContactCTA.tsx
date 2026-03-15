@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function ContactCTA() {
     return (
-        <section className="bg-gradient-to-br from-slate-800 to-slate-900 px-4 py-8">
+        <div className="bg-gradient-to-br from-slate-800 to-slate-900">
             <div className="flex flex-wrap justify-center items-center mx-auto sm:text-center md:text-left">
                 <div className="text-center md:text-left max-w-2xl">
                     {/* Heading */}
@@ -43,6 +43,6 @@ export default function ContactCTA() {
                     </button>
                 </motion.div>
             </div>
-        </section>
+        </div>
     );
 }

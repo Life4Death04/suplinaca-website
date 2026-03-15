@@ -2,13 +2,59 @@
 
 import { motion } from "framer-motion";
 
+export function ContactCTA() {
+    return (
+        <section className="bg-gradient-to-br from-slate-800 to-slate-900 px-4 py-8">
+            <div className="flex flex-wrap justify-center items-center mx-auto sm:text-center md:text-left">
+                <div className="text-center md:text-left max-w-2xl">
+                    {/* Heading */}
+                    <motion.h3
+                        className="mb-4 text-sm font-semibold uppercase tracking-widest text-gray-300"
+                    // initial={{ opacity: 0, y: 20 }}
+                    // whileInView={{ opacity: 1, y: 0 }}
+                    // viewport={{ once: true }}
+                    // transition={{ duration: 0.6 }}
+                    >
+                        ¿Necesitas Asesoría?
+                    </motion.h3>
+
+                    {/* Main text */}
+                    <motion.p
+                        className="mb-4 text-xl leading-tight text-white md:text-3xl md:text-left"
+                    // initial={{ opacity: 0, y: 20 }}
+                    // whileInView={{ opacity: 1, y: 0 }}
+                    // viewport={{ once: true }}
+                    // transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                        No dudes en contactarnos a través de nuestros medios de contacto.
+                    </motion.p>
+                </div>
+
+                {/* CTA Button */}
+                <motion.div
+                    // initial={{ opacity: 0, scale: 0.9 }}
+                    // whileInView={{ opacity: 1, scale: 1 }}
+                    // viewport={{ once: true }}
+                    // transition={{ duration: 0.6, delay: 0.4 }}
+                    className="my-auto lg:ml-8"
+                >
+                    <button className="bg-blue-600 px-10 py-4 text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-blue-700 hover:shadow-xl">
+                        Contacto
+                    </button>
+                </motion.div>
+            </div>
+        </section>
+    );
+}
+
 export default function Footer() {
     return (
-        <footer className="bg-slate-950 py-10 text-white">
-            <div className="flex flex-wrap items-center justify-center gap-12">
+        <footer className="bg-slate-950 pb-10 text-white">
+            <ContactCTA/>
+            <div className="flex flex-wrap items-center justify-center gap-12 mt-8">
                 {/* Top Section - Logo and Description */}
                 <motion.div
-                    className="text-center px-4 border-b border-slate-800 lg:border-none pb-8 w-full md:w-auto lg:max-w-[400px]"
+                    className="text-center lg:text-left self-start px-4 border-b border-slate-800 lg:border-none pb-8 w-full md:w-auto lg:max-w-[400px]"
                 // initial={{ opacity: 0, y: 20 }}
                 // whileInView={{ opacity: 1, y: 0 }}
                 // viewport={{ once: true }}
