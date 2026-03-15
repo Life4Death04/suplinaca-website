@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import ContactInfoCard from '../components/ContactInfoCard';
+import SolutionHero from '../components/SolutionHero';
 
 export const metadata: Metadata = {
   title: 'Contacto - Suplimeca | Contáctanos',
@@ -20,20 +21,11 @@ export default function ContactoPage() {
       <Navigation />
       
       {/* Hero Section */}
-      <section 
-        className="relative h-[400px] flex items-center justify-center text-white mt-16"
-        style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-950/80" />
-        <div className="relative z-10 text-center px-4">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">Contacto</h1>
-          <p className="text-xl md:text-2xl text-gray-200">Nos encantaría saber de ti</p>
-        </div>
-      </section>
+      <SolutionHero 
+        title="Contacto"
+        subtitle="Nos encantaría saber de ti"
+        backgroundImage="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070"
+      />
 
       {/* Contact Info Cards */}
       <section className="py-8 lg:py-12 px-4 bg-gray-50">

@@ -18,7 +18,7 @@ export default function SolutionHero({ title, subtitle, backgroundImage }: Solut
     >
       <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-950/70" />
       <div className="relative z-10 text-center px-4">
-        <h1 className="text-5xl md:text-6xl font-bold mb-4">{title}</h1>
+        <h1 className="text-4xl md:text-6xl font-bold mb-4">{title}</h1>
         <p className="text-xl md:text-2xl text-gray-200">{subtitle}</p>
       </div>
     </section>
