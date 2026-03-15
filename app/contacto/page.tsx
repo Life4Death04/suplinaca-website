@@ -55,16 +55,9 @@ export default function ContactoPage() {
                 </svg>
               }
               title="WhatsApp"
-              content={
-                <a 
-                  href="https://wa.me/582617420228" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:text-blue-600 transition-colors cursor-pointer"
-                >
-                  +58 261 7420228
-                </a>
-              }
+              content={<p>+58 261 7420228</p>}
+              href="https://wa.me/582617420228"
+              target="_blank"
             />
 
             {/* Mail Card */}
@@ -75,11 +68,8 @@ export default function ContactoPage() {
                 </svg>
               }
               title="Mail"
-              content={
-                <a href="mailto:info@suplinaca.com" className="hover:text-blue-600 transition-colors cursor-pointer">
-                  info@suplinaca.com
-                </a>
-              }
+              content={<p>info@suplinaca.com</p>}
+              href="mailto:info@suplinaca.com"
             />
 
             {/* Phone Card */}
@@ -90,11 +80,8 @@ export default function ContactoPage() {
                 </svg>
               }
               title="Llámanos"
-              content={
-                <a href="tel:+582617420228" className="hover:text-blue-600 transition-colors cursor-pointer">
-                  +58 261 7420228
-                </a>
-              }
+              content={<p>+58 261 7420228</p>}
+              href="tel:+582617420228"
             />
           </div>
         </div>
