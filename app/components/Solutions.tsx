@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Link from "next/link";
 
 // Service card component
 interface ServiceCardProps {
@@ -11,6 +11,7 @@ interface ServiceCardProps {
     description: string;
     imagePlaceholder?: string;
     delay?: number;
+    link?: string;
 }
 
 function ServiceCard({
@@ -20,6 +21,7 @@ function ServiceCard({
     description,
     imagePlaceholder,
     delay = 0,
+    link = "#",
 }: ServiceCardProps) {
     return (
         <motion.div
@@ -61,9 +63,12 @@ function ServiceCard({
                 </p>
 
                 {/* CTA Button */}
-                <button className="w-full rounded bg-blue-600 py-3 text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-blue-700 hover:shadow-lg">
+                <Link 
+                    href={link}
+                    className="block w-full rounded bg-blue-600 py-3 text-center text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-blue-700 hover:shadow-lg"
+                >
                     Saber Más
-                </button>
+                </Link>
             </div>
         </motion.div>
     );
@@ -99,15 +104,77 @@ export default function Solutions() {
             description:
                 "Nos especializamos en el suministro de componentes y fabricación de meter run, múltiples de producción, casing & tubing, sucker rod, válvulas, bridas, fittings, butt weld fittings, entre otros.",
             imagePlaceholder: "Mechanical Equipment",
+            link: "/soluciones/mecanica",
         },
-        // You can add more services here
-        // {
-        //   icon: <svg>...</svg>,
-        //   title: "Another Service",
-        //   subtitle: "Service Subtitle",
-        //   description: "Service description...",
-        //   imagePlaceholder: "Service Image",
-        // },
+        {
+            icon: (
+                <svg
+                    className="h-12 w-12"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                </svg>
+            ),
+            title: "Eléctrica",
+            subtitle: "Equipos & Sistemas",
+            description:
+                "Suministro de equipos eléctricos industriales, tableros de control, transformadores, motores y sistemas de automatización para optimizar sus procesos productivos.",
+            imagePlaceholder: "Electrical Equipment",
+            link: "/soluciones/electrica",
+        },
+        {
+            icon: (
+                <svg
+                    className="h-12 w-12"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                    />
+                </svg>
+            ),
+            title: "Instrumentación",
+            subtitle: "Control & Medición",
+            description:
+                "Instrumentos de medición, válvulas de control, transmisores, sensores y sistemas de automatización para mantener el control total de sus procesos industriales.",
+            imagePlaceholder: "Instrumentation",
+            link: "/soluciones/instrumentacion",
+        },
+        {
+            icon: (
+                <svg
+                    className="h-12 w-12"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                    />
+                </svg>
+            ),
+            title: "Civil",
+            subtitle: "Construcción & Infraestructura",
+            description:
+                "Materiales de construcción, estructuras metálicas, sistemas de tuberías y equipos especializados para proyectos de infraestructura de gran envergadura.",
+            imagePlaceholder: "Civil Construction",
+            link: "/soluciones/civil",
+        },
     ];
 
     return (
@@ -134,7 +201,7 @@ export default function Solutions() {
                 </motion.div>
 
                 {/* Services Grid - Adjust columns based on number of services */}
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
                     {services.map((service, index) => (
                         <ServiceCard
                             key={service.title}
@@ -143,6 +210,7 @@ export default function Solutions() {
                             subtitle={service.subtitle}
                             description={service.description}
                             imagePlaceholder={service.imagePlaceholder}
+                            link={service.link}
                             delay={index * 0.2}
                         />
                     ))}
