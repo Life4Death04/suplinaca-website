@@ -21,7 +21,6 @@ export default function Home() {
         <Solutions />
         <QualityBanner />
         <Brands />
-        <ContactCTA />
       </main>
       <Footer />
     </div>

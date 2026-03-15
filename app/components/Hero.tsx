@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
     return (
-        <section className="relative flex min-h-[70vh] items-center justify-center lg:justify-left overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 pt-10">
+        <section className="relative flex min-h-[70vh] items-center justify-center lg:justify-left overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 pt-24">
             {/* Background animated overlay */}
             <motion.div
                 className="absolute inset-0 bg-black/20"

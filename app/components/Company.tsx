@@ -1,17 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Company() {
     return (
-        <section className="bg-white px-4 py-5 lg:pb-12">
+        <section className="bg-white px-4 py-16 lg:py-20">
             <div className="mx-auto max-w-7xl">
                 {/* Two-column grid layout - stacks on mobile, side-by-side on desktop */}
-                <div className="relative flex flex-col md:flex-row gap-8">
+                <div className="relative flex flex-col md:flex-row gap-12">
                     {/* Left Column - Text Content */}
                     <motion.div
-                        className="flex flex-col justify-center gap-6 md:gap-2 md:w-1/2"
+                        className="flex flex-col justify-center gap-4 md:w-1/2"
                         // initial={{ opacity: 0, x: -50 }}
                         // whileInView={{ opacity: 1, x: 0 }}
                         // viewport={{ once: true }}
@@ -19,18 +19,18 @@ export default function Company() {
                     >
                         {/* Section Label */}
                         <motion.p
-                            className="mb-4 md:mb-0 text-sm font-bold uppercase tracking-wide text-blue-600"
+                            className="text-sm font-bold uppercase tracking-wide text-blue-600"
                             // initial={{ opacity: 0 }}
                             // whileInView={{ opacity: 1 }}
                             // viewport={{ once: true }}
                             // transition={{ duration: 0.6, delay: 0.2 }}
                         >
-                            La Empresa
+                            LA EMPRESA
                         </motion.p>
 
                         {/* Main Heading */}
                         <motion.h2
-                            className="mb-6 md:mb-0 text-3xl font-bold leading-tight text-gray-900 md:text-4xl lg:text-5xl"
+                            className="text-3xl font-bold text-gray-900 md:text-4xl lg:text-5xl"
                             // initial={{ opacity: 0, y: 20 }}
                             // whileInView={{ opacity: 1, y: 0 }}
                             // viewport={{ once: true }}
@@ -41,7 +41,7 @@ export default function Company() {
 
                         {/* Description */}
                         <motion.p
-                            className="mb-8 md:mb-0 text-base leading-relaxed text-gray-600 md:text-lg"
+                            className="text-base leading-relaxed text-gray-600 md:text-lg"
                             // initial={{ opacity: 0, y: 20 }}
                             // whileInView={{ opacity: 1, y: 0 }}
                             // viewport={{ once: true }}
@@ -59,9 +59,12 @@ export default function Company() {
                             // viewport={{ once: true }}
                             // transition={{ duration: 0.8, delay: 0.5 }}
                         >
-                            <button className="bg-blue-600 px-8 py-4 font-bold uppercase tracking-wide text-white transition-all hover:bg-blue-700 hover:shadow-lg">
-                                Saber Más
-                            </button>
+                            <Link 
+                                href="/contacto"
+                                className="inline-block bg-blue-600 hover:bg-blue-700 px-8 py-4 font-bold uppercase tracking-wide text-white transition-all hover:shadow-lg"
+                            >
+                                SABER MÁS
+                            </Link>
                         </motion.div>
                     </motion.div>
 
@@ -98,12 +101,12 @@ export default function Company() {
                                 >
                                     <polygon
                                         points="0,50 0,100 400,100 400,0"
-                                        fill="#2268ff"
+                                        fill="#ea580c"
                                         opacity="0.9"
                                     />
                                     <polygon
                                         points="0,30 0,100 350,100"
-                                        fill="#0b2adb"
+                                        fill="#dc2626"
                                         opacity="0.7"
                                     />
                                 </svg>
@@ -129,7 +132,7 @@ export default function Company() {
                                 <div className="text-xs font-semibold uppercase text-gray-700">
                                     Años de
                                     <br />
-                                    experiencia
+                                    Experiencia
                                 </div>
                             </div>
                         </motion.div>

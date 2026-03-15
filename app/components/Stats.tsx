@@ -39,28 +39,37 @@ function StatCard({
     label,
     suffix = "+",
     delay = 0,
+    hasCommas = false,
 }: {
     value: number;
     label: string;
     suffix?: string;
     delay?: number;
+    hasCommas?: boolean;
 }) {
     const { count, setHasStarted } = useCounter(value);
+    
+    const formatNumber = (num: number) => {
+        if (hasCommas) {
+            return num.toLocaleString('en-US');
+        }
+        return num.toString();
+    };
 
     return (
         <motion.div
-            className="flex flex-col items-center bg-white p-4"
+            className="flex flex-col items-center p-4"
         /* initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6, delay }}
         onViewportEnter={() => setHasStarted(true)} */
         >
-            <div className="mb-2 text-4xl font-bold text-blue-900 md:text-5xl">
-                {count}
+            <div className="mb-2 text-5xl font-bold text-blue-600 md:text-6xl">
+                {formatNumber(count)}
                 {suffix}
             </div>
-            <div className="text-center text-[12px] text-gray-600 md:text-base">
+            <div className="text-center text-base font-medium text-gray-900 md:text-lg">
                 {label}
             </div>
         </motion.div>
@@ -69,31 +78,44 @@ function StatCard({
 
 export default function Stats() {
     return (
-        <section className="bg-white px-4 py-8 lg:pb-12">
-            <div className="mx-auto max-w-6xl">
+        <section 
+            className="bg-gray-50 px-4 py-16 relative overflow-hidden"
+            style={{
+                backgroundImage: `radial-gradient(circle, #d1d5db 1px, transparent 1px)`,
+                backgroundSize: '30px 30px',
+            }}
+        >
+            {/* World map dotted pattern overlay effect */}
+            <div className="absolute inset-0 opacity-30"
+                style={{
+                    backgroundImage: `radial-gradient(circle at 20% 50%, transparent 20%, rgba(209, 213, 219, 0.3) 21%, rgba(209, 213, 219, 0.3) 30%, transparent 31%),
+                                     radial-gradient(circle at 80% 50%, transparent 20%, rgba(209, 213, 219, 0.3) 21%, rgba(209, 213, 219, 0.3) 30%, transparent 31%)`,
+                }}
+            />
+            
+            <div className="mx-auto max-w-6xl relative z-10">
                 {/* Section intro */}
                 <motion.div
-                    className="mb-4 text-center"
+                    className="mb-12 text-center"
                 /* initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }} */
                 >
-                    <h2 className="mb-4 text-3xl font-bold text-blue-900 md:text-4xl">
-                        En SUPLINACA garantizamos la satisfacción de nuestros clientes
+                    <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+                        En SUPLINACA garantizamos<br className="hidden md:block" /> la satisfacción de nuestros clientes.
                     </h2>
-                    <p className="mx-auto max-w-3xl text-gray-700 text-sm">
-                        Apegados a los procedimientos y normas de calidad, bajo una innovadora
-                        gestión del Capital Humano Especializado y con recursos tecnológicos
-                        actualizados.
+                    <p className="mx-auto max-w-3xl text-gray-600 text-base md:text-lg">
+                        Apegados a los procedimientos y normas de calidad, bajo una innovadora gestión del Capital Humano
+                        <br className="hidden md:block" /> Especializado y con recursos tecnológicos actualizados.
                     </p>
                 </motion.div>
 
                 {/* Stats grid */}
-                <div className="flex items-center justify-center gap-4 md:gap-16">
-                    <StatCard value={15} label="Proyectos Realizados" delay={0.2} />
-                    <StatCard value={50} label="Productos Entregados" delay={0.4} />
-                    <StatCard value={25} label="Años Trabajando" delay={0.6} />
+                <div className="flex flex-wrap items-center justify-center gap-8 md:gap-20">
+                    <StatCard value={48} label="Proyectos Realizados" delay={0.2} />
+                    <StatCard value={8451} label="Productos Entregados" delay={0.4} hasCommas={true} />
+                    <StatCard value={17} label="Años trabajando" delay={0.6} />
                 </div>
             </div>
         </section>
