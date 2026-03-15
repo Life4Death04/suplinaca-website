@@ -18,7 +18,7 @@ export default function FormInput({
   variant = 'light'
 }: FormInputProps) {
   const inputClasses = variant === 'light'
-    ? "w-full px-4 py-3 bg-gray-50 border-0 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 placeholder-gray-400 text-black"
+    ? "w-full px-4 py-3 bg-gray-50 placeholder-gray-400 border-0 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600  text-black"
     : "w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 bg-gray-200 placeholder-gray-500";
 
   return (
