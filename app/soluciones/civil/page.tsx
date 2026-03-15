@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
-import SolutionHero from '../../components/SolutionHero';
+import PageHero from '../../components/PageHero';
 import SolutionDetail from '../../components/SolutionDetail';
 
 export const metadata: Metadata = {
@@ -58,7 +58,7 @@ export default function CivilPage() {
     <main className="min-h-screen">
       <Navigation />
       
-      <SolutionHero 
+      <PageHero
         title="Civil"
         subtitle="Construcción & Infraestructura"
         backgroundImage="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070"

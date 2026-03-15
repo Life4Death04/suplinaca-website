@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
-import SolutionHero from '../../components/SolutionHero';
+import PageHero from '../../components/PageHero';
 import SolutionDetail from '../../components/SolutionDetail';
 
 export const metadata: Metadata = {
@@ -58,7 +58,7 @@ export default function InstrumentacionPage() {
     <main className="min-h-screen">
       <Navigation />
       
-      <SolutionHero 
+      <PageHero
         title="Instrumentación"
         subtitle="Control & Medición"
         backgroundImage="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070"

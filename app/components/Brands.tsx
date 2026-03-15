@@ -74,10 +74,10 @@ export default function Brands() {
                 {/* Section Heading */}
                 <motion.div
                     className="text-center mb-12"
-                // initial={{ opacity: 0, y: 20 }}
-                // whileInView={{ opacity: 1, y: 0 }}
-                // viewport={{ once: true }}
-                // transition={{ duration: 0.6 }}
+                    initial={{ opacity: 0, y: -30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
                 >
                     <h2 className="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
                         Nuestro respaldo siempre será la<br />CALIDAD
@@ -92,11 +92,11 @@ export default function Brands() {
                         <motion.div
                             key={brand.name}
                             className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300"
-                        // initial={{ opacity: 0, y: 30 }}
-                        // whileInView={{ opacity: 1, y: 0 }}
-                        // viewport={{ once: true, margin: "-50px" }}
-                        // transition={{ duration: 0.5, delay: index * 0.1 }}
-                        // whileHover={{ scale: 1.1 }}
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            whileHover={{ scale: 1.1 }}
                         >
                             {/* Brand Logo Image */}
                             <div className="relative w-32 h-20 flex items-center justify-center">

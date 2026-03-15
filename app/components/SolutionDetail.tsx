@@ -26,16 +26,28 @@ export default function SolutionDetail({ title, solutions }: SolutionDetailProps
   return (
     <section className="py-16 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900">
+        <motion.h2 
+          className="text-3xl md:text-4xl font-bold mb-8 text-gray-900"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           {title}
-        </h2>
+        </motion.h2>
         
         {/* Two Column Grid: Left = solution content, Right = contact form */}
         <div className="flex flex-wrap lg:flex-nowrap">
           {/* Left Column - Solution List */}
           <div className="space-y-12 mr-8 flex-1">
             {/* Text List in Two Columns */}
-            <div className="grid grid-cols-2 gap-x-6 gap-y-2 mb-12 border-t border-b py-4 border-gray-200">
+            <motion.div 
+              className="grid grid-cols-2 gap-x-6 gap-y-2 mb-12 border-t border-b py-4 border-gray-200"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
               {solutions.map((solution, index) => (
                 <div key={index}>
                   <p className="text-gray-700 font-medium mb-1">{solution.name}</p>
@@ -44,10 +56,16 @@ export default function SolutionDetail({ title, solutions }: SolutionDetailProps
                   ))}
                 </div>
               ))}
-            </div>
+            </motion.div>
 
             {/* Orange Button Cards - Expandable */}
-            <div className="space-y-3">
+            <motion.div 
+              className="space-y-3"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
               {solutions.map((solution, index) => (
                 <div key={index}>
                   <button
@@ -108,13 +126,19 @@ export default function SolutionDetail({ title, solutions }: SolutionDetailProps
                   </AnimatePresence>
                 </div>
               ))}
-            </div>
+            </motion.div>
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="lg:sticky lg:top-24 self-start">
+          <motion.div 
+            className="lg:sticky lg:top-24 self-start"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
             <ContactFormSection />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
