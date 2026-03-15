@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Solutions from '../components/Solutions';
+import Company from '../components/Company';
 
 export const metadata: Metadata = {
   title: 'Soluciones - Suplimeca | Servicios y Productos Industriales',
@@ -21,7 +22,7 @@ export default function SolucionesPage() {
       
       {/* Hero Section */}
       <section 
-        className="relative h-[400px] flex items-center justify-center text-white mt-20"
+        className="relative h-[400px] flex items-center justify-center text-white mt-14"
         style={{
           backgroundImage: 'url(https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070)',
           backgroundSize: 'cover',
@@ -34,6 +35,8 @@ export default function SolucionesPage() {
           <p className="text-xl md:text-2xl text-gray-200">Servicios y productos industriales de calidad</p>
         </div>
       </section>
+
+      <Company />
 
       {/* Solutions Section */}
       <Solutions />
@@ -94,7 +97,8 @@ export default function SolucionesPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section */}{/* 
+      PROBABLY I WOULDN'T NEED THIS, BUT I'LL LEAVE IT HERE IN CASE I WANT TO ADD IT LATER
       <section className="py-16 px-4 bg-gradient-to-r from-blue-900 to-blue-950">
         <div className="max-w-4xl mx-auto text-center text-white">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -111,7 +115,7 @@ export default function SolucionesPage() {
           </a>
         </div>
       </section>
-
+ */}
       <Footer />
     </main>
   );

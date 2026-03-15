@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Company() {
     return (
@@ -25,45 +25,47 @@ export default function Company() {
                             // viewport={{ once: true }}
                             // transition={{ duration: 0.6, delay: 0.2 }}
                         >
-                            SUPLIDORA NACIONAL DE VENEZUELA C.A.
+                            LA EMPRESA
                         </motion.p>
 
                         {/* Main Heading */}
                         <motion.h2
-                            className="text-4xl font-bold leading-tight text-gray-900 md:text-5xl"
+                            className="text-3xl font-bold text-gray-900 md:text-4xl lg:text-5xl"
                             // initial={{ opacity: 0, y: 20 }}
                             // whileInView={{ opacity: 1, y: 0 }}
                             // viewport={{ once: true }}
                             // transition={{ duration: 0.8, delay: 0.3 }}
                         >
-                            Sobre Nosotros
+                            Eficacia en todos los procesos del Sistema Integrado de Gestión
                         </motion.h2>
 
-                        {/* Description Paragraph 1 */}
+                        {/* Description */}
                         <motion.p
-                            className="text-base leading-relaxed text-gray-600"
+                            className="text-base leading-relaxed text-gray-600 md:text-lg"
                             // initial={{ opacity: 0, y: 20 }}
                             // whileInView={{ opacity: 1, y: 0 }}
                             // viewport={{ once: true }}
                             // transition={{ duration: 0.8, delay: 0.4 }}
                         >
-                            Es una compañía de comercialización de tuberías, válvulas, bridas y accesorios, 
-                            además fabricante de piezas especiales para el sector Petrolero, Hidrológico, 
-                            Industrial, Gasífero, Construcción y Servicios.
+                            Ofrecemos eficacia en todos los procesos que conforman el Sistema
+                            Integrado de Gestión, fabricación y comercialización de nuestros
+                            productos, garantizando así, la satisfacción de nuestros clientes.
                         </motion.p>
 
-                        {/* Description Paragraph 2 */}
-                        <motion.p
-                            className="text-base leading-relaxed text-gray-600"
+                        {/* Call to Action Button */}
+                        <motion.div
                             // initial={{ opacity: 0, y: 20 }}
                             // whileInView={{ opacity: 1, y: 0 }}
                             // viewport={{ once: true }}
                             // transition={{ duration: 0.8, delay: 0.5 }}
                         >
-                            Ofrece eficacia en todos los procesos que conforman el Sistema Integrado de Gestión, 
-                            fabricación y comercialización de nuestros productos, garantizando así, la satisfacción 
-                            de nuestros clientes.
-                        </motion.p>
+                            <Link 
+                                href="/contacto"
+                                className="inline-block bg-orange-500 hover:bg-orange-600 px-8 py-4 font-bold uppercase tracking-wide text-white transition-all hover:shadow-lg"
+                            >
+                                SABER MÁS
+                            </Link>
+                        </motion.div>
                     </motion.div>
 
                     {/* Right Column - Image with Badge */}
