@@ -19,7 +19,7 @@ export default function Company() {
                     >
                         {/* Section Label */}
                         <motion.p
-                            className="text-sm font-bold uppercase tracking-wide text-orange-500"
+                            className="text-sm font-bold uppercase tracking-wide text-blue-600"
                             // initial={{ opacity: 0 }}
                             // whileInView={{ opacity: 1 }}
                             // viewport={{ once: true }}
@@ -61,7 +61,7 @@ export default function Company() {
                         >
                             <Link 
                                 href="/contacto"
-                                className="inline-block bg-orange-500 hover:bg-orange-600 px-8 py-4 font-bold uppercase tracking-wide text-white transition-all hover:shadow-lg"
+                                className="inline-block bg-blue-600 hover:bg-blue-700 px-8 py-4 font-bold uppercase tracking-wide text-white transition-all hover:shadow-lg"
                             >
                                 SABER MÁS
                             </Link>
@@ -128,7 +128,7 @@ export default function Company() {
                             // whileHover={{ scale: 1.05, rotate: 5 }}
                         >
                             <div className="text-center">
-                                <div className="text-5xl font-bold text-orange-500">17+</div>
+                                <div className="text-5xl font-bold text-blue-600">17+</div>
                                 <div className="text-xs font-semibold uppercase text-gray-700">
                                     Años de
                                     <br />

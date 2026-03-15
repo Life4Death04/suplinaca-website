@@ -83,7 +83,7 @@ export default function Brands() {
                         Nuestro respaldo siempre será la<br />CALIDAD
                     </h2>
                     {/* Orange underline accent */}
-                    <div className="mx-auto h-1 w-24 bg-orange-500" />
+                    <div className="mx-auto h-1 w-24 bg-blue-600" />
                 </motion.div>
 
                 {/* Brands Flexbox Layout */}

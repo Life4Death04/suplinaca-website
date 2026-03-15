@@ -65,7 +65,7 @@ function StatCard({
         transition={{ duration: 0.6, delay }}
         onViewportEnter={() => setHasStarted(true)} */
         >
-            <div className="mb-2 text-5xl font-bold text-orange-500 md:text-6xl">
+            <div className="mb-2 text-5xl font-bold text-blue-600 md:text-6xl">
                 {formatNumber(count)}
                 {suffix}
             </div>

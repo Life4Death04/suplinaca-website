@@ -41,7 +41,7 @@ export default function NosotrosPage() {
           <div className="flex flex-wrap gap-8">
             {/* Box 1 - Sobre Nosotros Text (Top Left) */}
             <div className="flex-1 min-w-[300px] flex flex-col justify-center">
-              <p className="text-sm font-bold uppercase tracking-wide text-orange-500 mb-4">
+              <p className="text-sm font-bold uppercase tracking-wide text-blue-600 mb-4">
                 SUPLIDORA NACIONAL DE VENEZUELA C.A.
               </p>
               <h2 className="text-4xl font-bold leading-tight text-gray-900 md:text-5xl mb-6">
@@ -97,7 +97,7 @@ export default function NosotrosPage() {
               {/* 17+ Years Badge - Reused from Company component */}
               <div className="absolute bottom-8 right-8 flex h-32 w-32 items-center justify-center rounded-full bg-white shadow-2xl">
                 <div className="text-center">
-                  <div className="text-5xl font-bold text-orange-500">17+</div>
+                  <div className="text-5xl font-bold text-blue-600">17+</div>
                   <div className="text-xs font-semibold uppercase text-gray-700">
                     Años de
                     <br />
